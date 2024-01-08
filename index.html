@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>Chúc Mừng Năm Mới 2024</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="website icon" type="png" href="image/rong.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+
+  
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/firework-burst-icon-v2.png">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  
+    
+    <div class="container">
+        
+        <div class="loading-init">
+            <div style="font-size: 2em;" id="countdown"> </div>
+        </div>
+    </div>
+    
+    <script>
+        // Hàm đếm ngược đến năm mới
+        function startCountdown(redirectUrl) {
+            var countdownElement = document.getElementById('countdown');
+    
+            var interval = setInterval(function () {
+                // Lấy thời gian hiện tại
+                var now = new Date().getTime();
+    
+                // Tính toán thời gian còn lại đến năm mới (2024)
+                var newYearDate = new Date('Feb 10, 2024 00:00:00').getTime();
+                var distance = newYearDate - now;
+    
+                // Tính toán số ngày, giờ, phút và giây
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Hiển thị đếm ngược
+    countdownElement.innerHTML = days + ' ngày ' + hours + ' giờ ' + minutes + ' phút ' + seconds + ' giây ';
+
+                // Nếu đếm ngược kết thúc, chuyển đến trang khác
+                if (distance <= 0) {
+                    clearInterval(interval);
+                    window.location.href = redirectUrl;
+                }
+            }, 0);
+        }
+    
+        // Bắt đầu đếm ngược đến năm mới và chuyển đến trang 'index.html' sau khi kết thúc
+        startCountdown('index2.html');
+    </script>
+    
+     
+    
+
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/fscreen%401.0.1.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/Stage%400.1.4.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/MyMath.js'></script>
+<script src="./script.js"></script>
+
+
+</body>
+</html>
