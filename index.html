@@ -29,12 +29,12 @@
     </div>
     
     <script>
-        // Hàm đếm ngược đến năm mới
+        
         function startCountdown(redirectUrl) {
             var countdownElement = document.getElementById('countdown');
     
             var interval = setInterval(function () {
-                // Lấy thời gian hiện tại
+                
                 var now = new Date().getTime();
     
                 // Tính toán thời gian còn lại đến năm mới (2024)
@@ -50,7 +50,7 @@
     // Hiển thị đếm ngược
     countdownElement.innerHTML = days + ' ngày ' + hours + ' giờ ' + minutes + ' phút ' + seconds + ' giây ';
 
-                // Nếu đếm ngược kết thúc, chuyển đến trang khác
+                
                 if (distance <= 0) {
                     clearInterval(interval);
                     window.location.href = redirectUrl;
@@ -58,7 +58,7 @@
             }, 0);
         }
     
-        // Bắt đầu đếm ngược đến năm mới và chuyển đến trang 'index.html' sau khi kết thúc
+
         startCountdown('index2.html');
     </script>
     
